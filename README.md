@@ -81,6 +81,49 @@ The script will generate:
 2. A PNG image showing a comparison of Hits@N performance
 3. Printed MRR scores for each method
 
+
+### Interpreting the Results
+
+#### Hits@N Comparison Plot
+
+The `hits_at_n_comparison.png` shows a bar chart comparing the Hits@N performance of all three search methods (Semantic Search, Secondary Ranking, and Hybrid Search) for N = 1, 5, and 10. Higher bars indicate better performance.
+
+![Hits@N Comparison](hits_at_n_comparison.png)
+
+#### MRR Comparison Plot
+
+The `mrr_comparison.png` shows a bar chart comparing the Mean Reciprocal Rank (MRR) scores for all three search methods. Higher bars indicate better performance.
+
+![MRR Comparison](mrr_comparison.png)
+
+#### Results Table
+
+The `results_table.csv` file contains a summary of all metrics. Here's a sample of what it might look like:
+
+| Method | Hits@1 | Hits@5 | Hits@10 | MRR |
+|--------|--------|--------|---------|-----|
+| Semantic Search | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
+| Secondary Ranking | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
+| Hybrid Search | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
+
+(Replace 0.xxxx with your actual results)
+
+### Interpreting the Metrics
+
+- **Hits@N**: The proportion of queries where the correct product was in the top N results. Higher is better.
+- **MRR (Mean Reciprocal Rank)**: The average of the reciprocal ranks of the correct products in the search results. Higher is better.
+
+## Conclusion
+
+Based on these results, we can determine which method performs best for our specific use case. Typically, we're looking for:
+
+1. Higher Hits@N scores, especially for lower N values
+2. Higher MRR scores
+
+
+
+
+
 ## Future Work
 
 - Experiment with different embedding models
