@@ -106,7 +106,6 @@ The `results_table.csv` file contains a summary of all metrics. Here's a sample 
 | Secondary Ranking | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
 | Hybrid Search | 0.xxxx | 0.xxxx | 0.xxxx | 0.xxxx |
 
-(Replace 0.xxxx with your actual results)
 
 ### Interpreting the Metrics
 
