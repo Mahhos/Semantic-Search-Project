@@ -88,13 +88,13 @@ The script will generate:
 
 The `hits_at_n_comparison.png` shows a bar chart comparing the Hits@N performance of all three search methods (Semantic Search, Secondary Ranking, and Hybrid Search) for N = 1, 5, and 10. Higher bars indicate better performance.
 
-![Hits@N Comparison](hits_at_n_comparison.png)
+![Hits@N Comparison](results/hitN.png)
 
 #### MRR Comparison Plot
 
 The `mrr_comparison.png` shows a bar chart comparing the Mean Reciprocal Rank (MRR) scores for all three search methods. Higher bars indicate better performance.
 
-![MRR Comparison](mrr_comparison.png)
+![MRR Comparison](results/hitN.png)
 
 #### Results Table
 
