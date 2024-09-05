@@ -24,7 +24,30 @@ df_examples_products = pd.merge(
     right_on=['product_locale', 'product_id']
 )
 
-df_task_1 = df_examples_products[df_examples_products["small_version"] == 1]
+
+def handle_missing_data(df):
+    # Handle missing product descriptions
+    df['processed_description'] = df['product_description'].fillna(df['product_title'])
+    
+    # Handle missing attributes
+    for attr in ['brand', 'color', 'size']:
+        df[attr] = df[attr].fillna('Unknown')
+    
+    # Create flags for missing data
+    df['has_description'] = df['product_description'].notna().astype(int)
+    df['has_price'] = df['price'].notna().astype(int)
+    
+    # Handle missing numerical values
+    df['price'] = df.groupby('category')['price'].transform(lambda x: x.fillna(x.median()))
+    
+    return df
+
+# Apply the handling
+df_processed = handle_missing_data(df_examples_products)
+
+
+
+df_task_1 = df_processed[df_processed["small_version"] == 1]
 df_task_1_train = df_task_1[df_task_1["split"] == "train"]
 df_task_1_test = df_task_1[df_task_1["split"] == "test"]
 
