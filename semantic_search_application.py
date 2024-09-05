@@ -27,19 +27,7 @@ df_examples_products = pd.merge(
 
 def handle_missing_data(df):
     # Handle missing product descriptions
-    df['processed_description'] = df['product_description'].fillna(df['product_title'])
-    
-    # Handle missing attributes
-    for attr in ['brand', 'color', 'size']:
-        df[attr] = df[attr].fillna('Unknown')
-    
-    # Create flags for missing data
-    df['has_description'] = df['product_description'].notna().astype(int)
-    df['has_price'] = df['price'].notna().astype(int)
-    
-    # Handle missing numerical values
-    df['price'] = df.groupby('category')['price'].transform(lambda x: x.fillna(x.median()))
-    
+    df['processed_description'] = df['product_description'].fillna(df['product_title'])   
     return df
 
 # Apply the handling
